@@ -1,0 +1,20 @@
+<h2>Billing details</h2>
+<form [formGroup]="addCheckout">
+  <p>Full Name <span style="color: red">*</span></p>
+  <input type="text" formControlName="fullName" placeholder="" />
+  <p>Street adress <span style="color: red">*</span></p>
+  <input
+    type="text"
+    formControlName="address"
+    placeholder="House number and street name"
+  />
+  <p>Town/City</p>
+  <input type="text" formControlName="town" placeholder="" />
+  <p>Phone</p>
+  <input type="text" formControlName="phone" placeholder="" />
+  <p>Email adress <span style="color: red">*</span></p>
+  <input type="text" formControlName="email" placeholder="" />
+  <button class="btn btn-danger" (click)="onProductsClicked(addCheckout)"
+    type="submit"
+    value="Submit"> PLACE ORDER </button>
+</form>
