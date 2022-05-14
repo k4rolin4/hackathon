@@ -22,6 +22,9 @@
       "dom"
     ],
     "paths": {
+      "@products": [
+        "projects/products/src/index.ts"
+      ],
       "@cart": [
         "projects/cart/src/index.ts"
       ]
