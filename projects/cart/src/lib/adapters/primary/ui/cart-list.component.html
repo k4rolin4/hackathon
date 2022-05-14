@@ -1,3 +1,8 @@
+
+<ul><li *ngFor="let item of cartList$ | async">{{ item | json }}
+<button (click)="clickConfirm(item.id)"> Delete </button>
+</li></ul>
+
 <div class="container">
     <div><a href="/home">HOME</a> / <a href="/cart">Shopping cart</a></div>
     <div class="">
@@ -55,6 +60,5 @@
                 style="margin-top:20px; margin-bottom: 20px; background-color: #c0b8b8;">
         </div>
     </div>
-
-
 </div>
+
