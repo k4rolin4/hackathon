@@ -17,17 +17,11 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "paths": {
-      "@products": [
-        "projects/products/src/index.ts"
-      ],
-      "@cart": [
-        "projects/cart/src/index.ts"
-      ]
+      "@products": ["projects/products/src/index.ts"],
+      "@checkout": ["projects/checkout/src/index.ts"],
+      "@cart": ["projects/cart/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
