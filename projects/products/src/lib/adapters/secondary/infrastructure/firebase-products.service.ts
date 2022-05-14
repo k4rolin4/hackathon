@@ -12,7 +12,7 @@ export class FirebaseProductsService implements GetsAllProductDtoPort {
 
   getAll(criterion: Partial<ProductDTO>): Observable<ProductDTO[]> {
     return this._client
-      .collection<ProductDTO>('products')
+      .collection<ProductDTO>('products-list')
       .valueChanges({ idField: 'id' })
       .pipe(map((data: ProductDTO[]) => filterByCriterion(data, criterion)));
   }
