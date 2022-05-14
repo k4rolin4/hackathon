@@ -8,38 +8,39 @@ import { ProductDetailPageModule } from './pages/product-detail.page-module';
 import { ContactPageModule } from './pages/contact.page-module';
 import { AboutUsPageModule } from './pages/about-us.page-module';
 
-const routes: Routes = [{ 
-        path: 'home', 
-        loadChildren: () => HomePageModule
-      },
-  { 
-        path: 'cart', 
-        loadChildren: () => CartPageModule
-      },
-  { 
-        path: 'checkout', 
-        loadChildren: () => CheckoutPageModule
-      },
-  { 
-        path: 'checkout-summary', 
-        loadChildren: () => CheckoutSummaryPageModule
-      },
-  { 
-        path: 'product-detail', 
-        loadChildren: () => ProductDetailPageModule
-      },
-  { 
-        path: 'contact', 
-        loadChildren: () => ContactPageModule
-      },
-  { 
-        path: 'about-us', 
-        loadChildren: () => AboutUsPageModule
-      }
+const routes: Routes = [
+  {
+    path: 'home',
+    loadChildren: () => HomePageModule,
+  },
+  {
+    path: 'cart',
+    loadChildren: () => CartPageModule,
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => CheckoutPageModule,
+  },
+  {
+    path: 'checkout-summary',
+    loadChildren: () => CheckoutSummaryPageModule,
+  },
+  {
+    path: 'product-detail',
+    loadChildren: () => ProductDetailPageModule,
+  },
+  {
+    path: 'contact',
+    loadChildren: () => ContactPageModule,
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => AboutUsPageModule,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

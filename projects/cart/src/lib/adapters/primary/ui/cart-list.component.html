@@ -1,1 +1,58 @@
-<ul><li *ngFor="let item of cartList$ | async">{{ item | json }}</li></ul>
+<div class="container">
+    <div><a href="/home">HOME</a> / <a href="/cart">Shopping cart</a></div>
+    <div class="">
+        <ul class="row justify-content-md-center ">
+            <li class="col-2 list-group-item">
+                Product
+            </li>
+            <li class="col-2 list-group-item">
+                Price
+            </li>
+            <li class="col-2 list-group-item">
+                Quantity
+            </li>
+            <li class="col-2 list-group-item">
+                Total
+            </li>
+        </ul>
+        <hr class="border border-2 rounded" style="margin-top:20px; margin-bottom: 20px; background-color: #c0b8b8;">
+    </div>
+    <div *ngFor="let item of cartList$ | async" class=" ">
+        <ul class="row justify-content-md-center">
+            <li class="list-group-item col-2">{{ item.name }}</li>
+            <li class="list-group-item col-2">{{ item.price }} $</li>
+            <li class="list-group-item col-2"></li>
+            <li class="list-group-item col-2">{{ item.price }} $</li>
+        </ul>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card p-2 ">
+            <h4 class="card-title">Cart Totals</h4>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="card-subtitle mb-2 text-muted align-middle">Subtotal</h6>
+                </div>
+                <div>cena $</div>
+                <!-- cena na wąsy -->
+            </div>
+            <hr class="border border-2 rounded"
+                style="margin-top:20px; margin-bottom: 20px; background-color: #c0b8b8;">
+            <div class="d-flex justify-content-between">
+                <h6 class="card-subtitle mb-2 text-muted align-middle">Shipping free</h6>
+                <div>cena $</div>
+            </div>
+
+            <hr class="border border-2 rounded"
+                style="margin-top:20px; margin-bottom: 20px; background-color: #c0b8b8;">
+            <div class="d-flex justify-content-between">
+                <h6 class="card-subtitle mb-2 text-muted align-middle">Total</h6>
+                <div>cena $</div>
+                <!-- cena na wasy -->
+            </div>
+
+            <hr class="border border-2 rounded"
+                style="margin-top:20px; margin-bottom: 20px; background-color: #c0b8b8;">
+        </div>
+    </div>
+</div>

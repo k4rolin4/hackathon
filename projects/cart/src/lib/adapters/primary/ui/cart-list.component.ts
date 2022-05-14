@@ -8,6 +8,7 @@ import { GETS_ALL_CART_DTO, GetsAllCartDtoPort } from '../../../application/port
     templateUrl: './cart-list.component.html', 
     encapsulation: ViewEncapsulation.None, 
     changeDetection: ChangeDetectionStrategy.OnPush })
+
 export class CartListComponent {
   cartList$: Observable<CartDTO[]> = this._getsAllCartDto.getAll();
 

@@ -199,6 +199,44 @@
           "defaultConfiguration": "production"
         }
       }
+    },
+    "cart": {
+      "projectType": "library",
+      "root": "projects/cart",
+      "sourceRoot": "projects/cart/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": { "project": "projects/cart/ng-package.json" },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/cart/tsconfig.lib.prod.json"
+            },
+            "development": { "tsConfig": "projects/cart/tsconfig.lib.json" }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    },
+    "checkout": {
+      "projectType": "library",
+      "root": "projects/checkout",
+      "sourceRoot": "projects/checkout/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": { "project": "projects/checkout/ng-package.json" },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/checkout/tsconfig.lib.prod.json"
+            },
+            "development": { "tsConfig": "projects/checkout/tsconfig.lib.json" }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
     }
   },
   "defaultProject": "hackathon"
