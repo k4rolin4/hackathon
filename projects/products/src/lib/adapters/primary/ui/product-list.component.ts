@@ -22,9 +22,11 @@ import { FormGroup } from '@angular/forms';
 export class ProductListComponent {
   product$: Observable<ProductDTO[]> = this._getsAllProductDto.getAll();
 
+
   constructor(
     @Inject(GETS_ALL_PRODUCT_DTO)
-    private _getsAllProductDto: GetsAllProductDtoPort, @Inject(ADDS_CART_DTO) 
+    private _getsAllProductDto: GetsAllProductDtoPort, 
+    @Inject(ADDS_CART_DTO) 
     private _addsCartDto: AddsCartDtoPort
   ) {}
 
