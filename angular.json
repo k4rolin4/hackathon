@@ -83,7 +83,8 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
-        }
+        },
+        "deploy": { "builder": "angular-cli-ghpages:deploy" }
       }
     },
     "checkout": {
@@ -143,22 +144,19 @@
         }
       }
     },
-    "checkout": {
+    "admin": {
       "projectType": "library",
-      "root": "projects/checkout",
-      "sourceRoot": "projects/checkout/src",
+      "root": "projects/admin",
+      "sourceRoot": "projects/admin/src",
       "prefix": "lib",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": { "project": "projects/checkout/ng-package.json" },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/checkout/tsconfig.lib.prod.json"
-            },
-            "development": { "tsConfig": "projects/checkout/tsconfig.lib.json" }
-          },
-          "defaultConfiguration": "production"
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/admin"],
+          "options": {
+            "jestConfig": "projects/admin/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }

@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { InMemoryContextStorageModule } from 'projects/products/src/lib/adapters/secondary/infrastructure/in-memory-context.storage-module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { InMemoryContextStorageModule } from 'projects/products/src/lib/adapters
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     InMemoryContextStorageModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
