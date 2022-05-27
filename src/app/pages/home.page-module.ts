@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HomePage } from './home.page';
-import { ProductListComponentModule } from '../../../projects/products/src/lib/adapters/primary/ui/product-list.component-module';
-import { FirebaseProductsServiceModule } from '../../../projects/products/src/lib/adapters/secondary/infrastructure/firebase-products.service-module';
+import { FirebaseProductsServiceModule, ProductListComponentModule } from '@products';
 import { FirebaseCartServiceModule } from '@cart';
+import { FirebaseAdminProductsServiceModule, FirebaseTopSellerServiceModule, TopSellersComponentModule } from '@admin';
+import { HomePage } from './home.page';
 
 @NgModule({
   imports: [
@@ -17,7 +17,10 @@ import { FirebaseCartServiceModule } from '@cart';
     ]),
     ProductListComponentModule,
     FirebaseProductsServiceModule,
-    FirebaseCartServiceModule
+    FirebaseCartServiceModule,
+    TopSellersComponentModule,
+    FirebaseTopSellerServiceModule,
+    FirebaseAdminProductsServiceModule  
   ],
   declarations: [HomePage],
   providers: [],
