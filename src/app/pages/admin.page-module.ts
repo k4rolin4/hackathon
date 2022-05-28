@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 import {
   FirebaseAdminProductsServiceModule,
   FirebaseTopSellerServiceModule,
+  InMemoryProductStorageModule,
   MainComponentModule,
 } from '@admin';
-
+import { InMemoryContextStorageModule } from '@products';
 import { AdminPage } from './admin.page';
 
 @NgModule({
@@ -21,6 +22,8 @@ import { AdminPage } from './admin.page';
     MainComponentModule,
     FirebaseAdminProductsServiceModule,
     FirebaseTopSellerServiceModule,
+    InMemoryContextStorageModule,
+    InMemoryProductStorageModule,
   ],
   declarations: [AdminPage],
   providers: [],
