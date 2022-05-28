@@ -1,17 +1,17 @@
 <div class="container py-5">
   <div class="row no-gutters">
     <div class="card-group">
-      <div class="card ms-5" *ngFor="let item of product$ | async">
+      <div class="card ms-5" *ngFor="let product of product$ | async">
         <img
-          [src]="[item.imageUrl]"
+          [src]="[product.imageUrl]"
           style="height: 484px"
           class="card-img-top"
           alt="..."
         />
-        <p class="text-center" style="font-weight: bold">{{ item.name }}</p>
-        <p class="text-center">$ {{ item.price }}</p>
-        <button (click)="onButtonClicked(item)">Add to top sellers</button>
-        <button (click)="onModalOpened()">Delete Product</button>
+        <p class="text-center" style="font-weight: bold">{{ product.name }}</p>
+        <p class="text-center">$ {{ product.price }}</p>
+        <button (click)="onButtonClicked(product)">Add to top sellers</button>
+        <button (click)="onModalOpened(product)">Delete Product</button>
       </div>
     </div>
   </div>
