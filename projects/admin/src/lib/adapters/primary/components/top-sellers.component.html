@@ -1,6 +1,3 @@
-
-<h2 class="text-center">Top Seller</h2>
-<h4 class="text-center">Browse our top-selling products!</h4>
 <div class="container py-5">
   <div class="row no-gutters">
     <div class="card-group">
@@ -13,12 +10,8 @@
         />
         <p class="text-center" style="font-weight: bold">{{ item.name }}</p>
         <p class="text-center">$ {{ item.price }}</p>
-          <button>
-            <a href="/cart" style="text-decoration: none; color:black;">
-          Buy Now!
-        </a>
-        <br>
-        <img src="https://cdn4.iconfinder.com/data/icons/business-2-66/60/bag-5-512.png" alt="" style="width: 20px; height:30px">
+        <button (click)="onDeleteClicked(item.id)">
+          Delete from top sellers
         </button>
       </div>
     </div>
