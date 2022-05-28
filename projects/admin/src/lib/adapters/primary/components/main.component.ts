@@ -4,7 +4,8 @@ import {
   Inject,
   ViewEncapsulation,
 } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ProductDTO } from '../../../application/ports/secondary/dto/product.dto';
 import { ProductContext } from '../../../application/ports/secondary/context/product.context';
 import {
@@ -29,6 +30,7 @@ import {
 } from '../../../application/ports/secondary/context/selects-product.context-port';
 import { DeleteProductComponent } from './delete-product.component';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { EditProductComponent } from './edit-product.component';
 
 @Component({
   selector: 'lib-main',
@@ -73,5 +75,10 @@ export class MainComponent {
     this.modalRef = this.modalService.show(DeleteProductComponent);
     this._setsStateProductContext.setState({ product }).subscribe();
     console.log(product);
+  }
+
+  onEditModalOpened(product: ProductDTO) {
+    this.modalRef = this.modalService.show(EditProductComponent);
+    this._setsStateProductContext.setState({ product }).subscribe();
   }
 }
