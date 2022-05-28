@@ -6,3 +6,8 @@ export * from './lib/adapters/secondary/services/firebase-top-seller.service-mod
 export * from './lib/adapters/primary/components/add-product.component-module';
 export * from './lib/adapters/primary/components/delete-product.component-module';
 export * from './lib/adapters/secondary/storages/in-memory-product.storage-module';
+export * from './lib/adapters/primary/components/navbar.component-module';
+export * from './lib/adapters/primary/components/edit-product.component-module';
+export * from './lib/adapters/primary/components/testimonials.component-module';
+export * from './lib/adapters/secondary/services/firebase-testimonials.service-module';
+export * from './lib/adapters/primary/components/add-testimonial.component-module';

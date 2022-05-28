@@ -1,0 +1,14 @@
+<div class="container py-5">
+  <div class="row no-gutters">
+    <div class="card-group">
+      <div class="card ms-5" *ngFor="let testimonial of testimonial$ | async">
+        <img [src]="[testimonial.imageUrl]" class="card-img-top" alt="..." />
+        <p class="text-center" style="font-weight: bold">
+          {{ testimonial.name }}
+        </p>
+        <p class="text-center">{{ testimonial.desc }}</p>
+        <!-- <button (click)="onButtonClicked(product)">Add to top sellers</button> -->
+      </div>
+    </div>
+  </div>
+</div>
