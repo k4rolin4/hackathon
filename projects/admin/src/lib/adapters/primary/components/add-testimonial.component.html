@@ -1,4 +1,4 @@
-<form [formGroup]="testimonial">
+<form [formGroup]="testimonial" (ngSubmit)="onButtonClicked(testimonial)">
   <input type="text" formControlName="name" placeholder="Name" /><input
     type="text"
     formControlName="desc"

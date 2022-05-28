@@ -28,7 +28,7 @@ export class AddTestimonialComponent {
     private _addsTestimonialDto: AddsTestimonialDtoPort
   ) {}
 
-  onButtonClicked(): void {
+  onButtonClicked(testimonial: FormGroup): void {
     this._addsTestimonialDto
       .add({
         name: this.testimonial.get('name')?.value,
@@ -36,5 +36,6 @@ export class AddTestimonialComponent {
         imageUrl: this.testimonial.get('imageUrl')?.value,
       })
       .subscribe();
+    this.testimonial.reset();
   }
 }
