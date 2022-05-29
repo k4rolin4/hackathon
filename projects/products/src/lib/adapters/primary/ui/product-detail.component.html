@@ -1,1 +1,47 @@
-{{ product$ | async | json }}
+
+
+    <div class="row row-cols-2" style="margin: 4%;">
+        <div class="col">
+            <img [src]="(product$ | async)?.imageUrl" class="shadow-lg mb-4" style="width: 500px;" alt="">
+        </div>
+
+        <div class="col">
+            <p style="font-size:xx-large; margin-top: 40px;" ><strong> {{ (product$ | async)?.name }}</strong></p>
+            <p> 😐 😐 😐 🫥 🫥 (13) </p>
+
+            <div class="row">
+                <div class="col-2" style="text-align: left; font-size: x-large; color: gray; text-decoration: line-through;">
+                    $1{{ (product$| async)?.price | number : '1.2-2'}}</div>
+                <div class="col-2" style="text-align: left; font-size: x-large;">
+                    ${{ (product$| async)?.price | number : '1.2-2' }}</div>
+            <p style="text-align: justify; margin-bottom: 60px; margin-top: 20px;">
+                Opis: {{ (product$ | async)?.desc }}</p>
+            </div>
+        
+            <div class="btn-group" dropdown>
+                <button type="button" class="btn btn-light" style="width: 170px; text-align: left;" disabled>
+                    Select Size</button>
+                <button 
+                  id="button-animated" dropdownToggle type="button" class="btn btn-light dropdown-toggle"
+                  aria-controls="dropdown-animated"> 
+                  <span class="caret"></span>
+              </button>
+               <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+                  role="menu" aria-labelledby="button-animated" aria-disabled="true">
+                  <li *ngFor="let choice of size$">
+                      <a class="dropdown-item">{{ choice }}</a>
+                  </li>
+                </ul>
+            </div>
+            <div>
+            <button type="button" class="btn btn-dark p-3" 
+                    style="margin-top: 20px; margin-bottom: 20px; width: 210px;">
+                     ADD TO CART</button>
+            </div>
+            <p style="text-align: justify; font-size: smaller;">
+                <strong>Category: </strong></p>
+            <p style="text-align: justify;font-size: smaller;">
+                <strong>Tags: </strong></p>
+            
+
+</div>
