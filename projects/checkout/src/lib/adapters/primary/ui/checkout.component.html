@@ -16,7 +16,7 @@
           formControlName="fullName"
           placeholder=""
           class="pb-2"
-          style="width: 90%; height: 40px"
+          style="width: 50%; height: 40px"
           required
         />
       </div>
@@ -27,7 +27,7 @@
           formControlName="address"
           placeholder="House number and street name"
           class="pb-2"
-          style="width: 90%; height: 40px"
+          style="width: 50%; height: 40px"
           required
         />
       </div>
@@ -37,7 +37,7 @@
           type="text"
           formControlName="town"
           placeholder=""
-          style="width: 90%; height: 40px"
+          style="width: 50%; height: 40px"
           required
         />
       </div>
@@ -47,7 +47,7 @@
           type="text"
           formControlName="phone"
           placeholder=""
-          style="width: 90%; height: 40px"
+          style="width: 50%; height: 40px"
           required
         />
       </div>
@@ -57,7 +57,7 @@
           type="email"
           formControlName="email"
           placeholder=""
-          style="width: 90%; height: 40px"
+          style="width: 50%; height: 40px"
           required="@"
           email
         />
@@ -83,10 +83,10 @@
 </div>
 <div
   *ngIf="placeOrder"
-  class="alert alert-success alert-dismissible mt-5 text-center"
-  style="width: 150px; position: absolute; top: 15px; right: 10px;"
+  class="alert alert-dismissible mt-5 text-center"
+  style="width: 200px; position: absolute; top: 15px; right: 10px; background-color: greenyellow;"
   role="alert"
 >
-  Place order succesfully!
+  Place ordered succesfully!
 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
