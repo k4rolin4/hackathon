@@ -14,6 +14,8 @@ export class CheckoutComponent {
   constructor(@Inject(ADDS_CHECKOUT_DTO) private _addsCheckoutDto: AddsCheckoutDtoPort) {
   }
 
+  placeOrder: boolean = false;
+
   onProductsClicked(addsCheckout: FormGroup): void {
     this._addsCheckoutDto.add({
       fullName: addsCheckout.get('fullName')?.value,
@@ -23,6 +25,8 @@ export class CheckoutComponent {
       email: addsCheckout.get('email')?.value
   });
       addsCheckout.reset();
-
+  }
+  showAlert(): void {
+    this.placeOrder = true;
   }
 }

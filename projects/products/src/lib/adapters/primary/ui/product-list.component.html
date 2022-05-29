@@ -1,6 +1,6 @@
-<h1 class="text-center">Discover our products!</h1>
+<h1 class="text-center text-uppercase">Discover our products!</h1>
 <h5 class="text-center">Recently added clothes</h5>
-<div class="container py-5">
+<div class="container py-3">
   <div class="row">
     <div class="card-group">
       <div class="card ms-5" *ngFor="let item of product$ | async">
@@ -13,7 +13,7 @@
           alt="..."
         />
         <p class="text-center" style="font-weight: bold">{{ item.name }}</p>
-        <p class="text-center">$ {{ item.price }}</p>
+        <p class="text-center" style="color: blue;">$ {{ item.price }}</p>
         <button (click)="onItemClicked(item)">Add to cart</button>
       </div>
     </div>
