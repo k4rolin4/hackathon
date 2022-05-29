@@ -7,8 +7,17 @@ import { CheckoutSummaryPageModule } from './pages/checkout-summary.page-module'
 import { ProductDetailPageModule } from './pages/product-detail.page-module';
 import { ContactPageModule } from './pages/contact.page-module';
 import { AboutUsPageModule } from './pages/about-us.page-module';
+import { AdminPageModule } from './pages/admin.page-module';
+import { AdminProductsPageModule } from './pages/admin-products.page-module';
+import { AdminAddProductPageModule } from './pages/admin-add-product.page-module';
+import { AdminTestimonialPageModule } from './pages/admin-testimonial.page-module';
+import { AdminAddTestimonialPageModule } from './pages/admin-add-testimonial.page-module';
 
 const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => HomePageModule,
+  },
   {
     path: 'home',
     loadChildren: () => HomePageModule,
@@ -37,6 +46,26 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: () => AboutUsPageModule,
   },
+  {
+    path: 'admin',
+    loadChildren: () => AdminPageModule,
+  },
+  {
+    path: 'admin/topSellers',
+    loadChildren: () => AdminProductsPageModule,
+  },
+  {
+    path: 'admin/addProduct',
+    loadChildren: () => AdminAddProductPageModule,
+  },
+  {
+    path: 'admin/testimonials',
+    loadChildren: () => AdminTestimonialPageModule,
+  },
+  { 
+        path: 'admin/addTestimonial', 
+        loadChildren: () => AdminAddTestimonialPageModule
+      }
 ];
 
 @NgModule({
