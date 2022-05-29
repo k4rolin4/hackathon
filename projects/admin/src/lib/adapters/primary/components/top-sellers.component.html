@@ -1,8 +1,4 @@
-<div class="container pt-3">
-<hr>
-<h2 class="text-center text-uppercase pt-4">Top Seller</h2>
-<h4 class="text-center">Browse our top-selling products!</h4>
-<div class="container py-3">
+<div class="container py-5">
   <div class="row no-gutters">
     <div class="card-group">
       <div class="card ms-5" *ngFor="let item of topSeller$ | async">
@@ -13,24 +9,11 @@
           alt="..."
         />
         <p class="text-center" style="font-weight: bold">{{ item.name }}</p>
-        <p class="text-center" style="color:blue;">$ {{ item.price }}</p>
-          <button>
-            <a href="/cart" style="text-decoration: none; color:black;">
-          Buy Now!
-        </a>
-        <br>
-        <img src="https://cdn4.iconfinder.com/data/icons/business-2-66/60/bag-5-512.png" alt="" style="width: 20px; height:30px">
+        <p class="text-center">$ {{ item.price }}</p>
+        <button (click)="onDeleteClicked(item.id)">
+          Delete from top sellers
         </button>
       </div>
     </div>
-  </div>
-</div>
-</div>
-
-<div class="carousel-item">
-  <img src="..." alt="...">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>...</h5>
-    <p>...</p>
   </div>
 </div>
