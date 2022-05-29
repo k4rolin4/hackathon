@@ -1,0 +1,25 @@
+<div *ngIf="product$ | async as product">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Product</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">{{ product | json }}</div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-bs-dismiss="modal"
+      (click)="modalRef?.hide()"
+    >
+      Cancel
+    </button>
+    <button type="button" class="btn btn-primary">Delete task</button>
+  </div>
+</div>

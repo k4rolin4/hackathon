@@ -10,6 +10,8 @@ import { AboutUsPageModule } from './pages/about-us.page-module';
 import { AdminPageModule } from './pages/admin.page-module';
 import { AdminProductsPageModule } from './pages/admin-products.page-module';
 import { AdminAddProductPageModule } from './pages/admin-add-product.page-module';
+import { AdminTestimonialPageModule } from './pages/admin-testimonial.page-module';
+import { AdminAddTestimonialPageModule } from './pages/admin-add-testimonial.page-module';
 
 const routes: Routes = [
   {
@@ -52,9 +54,17 @@ const routes: Routes = [
     path: 'admin/topSellers',
     loadChildren: () => AdminProductsPageModule,
   },
+  {
+    path: 'admin/addProduct',
+    loadChildren: () => AdminAddProductPageModule,
+  },
+  {
+    path: 'admin/testimonials',
+    loadChildren: () => AdminTestimonialPageModule,
+  },
   { 
-        path: 'admin/addProduct', 
-        loadChildren: () => AdminAddProductPageModule
+        path: 'admin/addTestimonial', 
+        loadChildren: () => AdminAddTestimonialPageModule
       }
 ];
 

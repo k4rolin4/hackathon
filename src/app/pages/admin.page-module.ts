@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  FirebaseAdminProductsServiceModule,
-  FirebaseTopSellerServiceModule,
-  MainComponentModule,
-} from '@admin';
-
+import { FirebaseAdminProductsServiceModule, FirebaseTopSellerServiceModule, InMemoryProductStorageModule, MainComponentModule, NavbarComponentModule } from '@admin';
+import { InMemoryContextStorageModule } from '@products';
 import { AdminPage } from './admin.page';
 
 @NgModule({
@@ -21,6 +17,9 @@ import { AdminPage } from './admin.page';
     MainComponentModule,
     FirebaseAdminProductsServiceModule,
     FirebaseTopSellerServiceModule,
+    InMemoryContextStorageModule,
+    InMemoryProductStorageModule,
+    NavbarComponentModule
   ],
   declarations: [AdminPage],
   providers: [],

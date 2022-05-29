@@ -5,7 +5,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ProductDTO } from '../../../application/ports/secondary/dto/product.dto';
+import { ProductContext } from '../../../application/ports/secondary/context/product.context';
 import {
   GETS_ALL_PRODUCT_DTO,
   GetsAllProductDtoPort,
@@ -18,8 +20,17 @@ import {
   ADDS_PRODUCT_DTO,
   AddsProductDtoPort,
 } from '../../../application/ports/secondary/dto/adds-product.dto-port';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import {
+  SETS_STATE_PRODUCT_CONTEXT,
+  SetsStateProductContextPort,
+} from '../../../application/ports/secondary/context/sets-state-product.context-port';
+import {
+  SELECTS_PRODUCT_CONTEXT,
+  SelectsProductContextPort,
+} from '../../../application/ports/secondary/context/selects-product.context-port';
 import { DeleteProductComponent } from './delete-product.component';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { EditProductComponent } from './edit-product.component';
 
 @Component({
   selector: 'lib-main',
@@ -30,6 +41,14 @@ import { DeleteProductComponent } from './delete-product.component';
 export class MainComponent {
   modalRef?: BsModalRef;
   product$: Observable<ProductDTO[]> = this._getsAllProductDto.getAll();
+  id$: Observable<String> = this._selectsProductContext
+    .select()
+    .pipe(
+      map(
+        (productcontext: Partial<ProductContext>) =>
+          productcontext?.product?.id || ''
+      )
+    );
 
   constructor(
     private modalService: BsModalService,
@@ -37,7 +56,11 @@ export class MainComponent {
     private _getsAllProductDto: GetsAllProductDtoPort,
     @Inject(ADDS_TOP_SELLER_DTO)
     private _addsTopSellerDto: AddsTopSellerDtoPort,
-    @Inject(ADDS_PRODUCT_DTO) private _addsProductDto: AddsProductDtoPort
+    @Inject(ADDS_PRODUCT_DTO) private _addsProductDto: AddsProductDtoPort,
+    @Inject(SETS_STATE_PRODUCT_CONTEXT)
+    private _setsStateProductContext: SetsStateProductContextPort,
+    @Inject(SELECTS_PRODUCT_CONTEXT)
+    private _selectsProductContext: SelectsProductContextPort
   ) {}
   onButtonClicked(item: ProductDTO): void {
     this._addsTopSellerDto.add({
@@ -48,7 +71,14 @@ export class MainComponent {
     });
   }
 
-  onModalOpened() {
+  onModalOpened(product: ProductDTO) {
     this.modalRef = this.modalService.show(DeleteProductComponent);
+    this._setsStateProductContext.setState({ product }).subscribe();
+    console.log(product);
+  }
+
+  onEditModalOpened(product: ProductDTO) {
+    this.modalRef = this.modalService.show(EditProductComponent);
+    this._setsStateProductContext.setState({ product }).subscribe();
   }
 }

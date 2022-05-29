@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  AddProductComponentModule,
-  FirebaseAdminProductsServiceModule,
-} from '@admin';
+import { AddProductComponentModule, FirebaseAdminProductsServiceModule, NavbarComponentModule } from '@admin';
 import { AdminAddProductPage } from './admin-add-product.page';
 
 @NgModule({
@@ -18,6 +15,7 @@ import { AdminAddProductPage } from './admin-add-product.page';
     ]),
     AddProductComponentModule,
     FirebaseAdminProductsServiceModule,
+    NavbarComponentModule
   ],
   declarations: [AdminAddProductPage],
   providers: [],

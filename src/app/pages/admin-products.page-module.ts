@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  FirebaseAdminProductsServiceModule,
-  FirebaseTopSellerServiceModule,
-  TopSellersComponentModule,
-} from '@admin';
+import { FirebaseAdminProductsServiceModule, FirebaseTopSellerServiceModule, NavbarComponentModule, TopSellersComponentModule } from '@admin';
 import { AdminProductsPage } from './admin-products.page';
 
 @NgModule({
@@ -20,6 +16,7 @@ import { AdminProductsPage } from './admin-products.page';
     TopSellersComponentModule,
     FirebaseAdminProductsServiceModule,
     FirebaseTopSellerServiceModule,
+    NavbarComponentModule
   ],
   declarations: [AdminProductsPage],
   providers: [],
