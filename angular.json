@@ -159,6 +159,22 @@
           }
         }
       }
+    },
+    "navigation": {
+      "projectType": "library",
+      "root": "projects/navigation",
+      "sourceRoot": "projects/navigation/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/navigation"],
+          "options": {
+            "jestConfig": "projects/navigation/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "defaultProject": "hackathon"
