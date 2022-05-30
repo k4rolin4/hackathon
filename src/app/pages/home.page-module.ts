@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FirebaseProductsServiceModule, ProductListComponentModule, TopSellersComponentModule, FirebaseTopSellerServiceModule } from '@products';
+import {
+  FirebaseProductsServiceModule,
+  ProductListComponentModule,
+  FirebaseTopSellerServiceModule,
+  TopSellersComponentModule,
+} from '@products';
 import { FirebaseCartServiceModule } from '@cart';
+import { NavbarComponentModule } from '@navigation';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -18,7 +24,8 @@ import { HomePage } from './home.page';
     FirebaseProductsServiceModule,
     FirebaseCartServiceModule,
     TopSellersComponentModule,
-    FirebaseTopSellerServiceModule
+    FirebaseTopSellerServiceModule,
+    NavbarComponentModule,
   ],
   declarations: [HomePage],
   providers: [],

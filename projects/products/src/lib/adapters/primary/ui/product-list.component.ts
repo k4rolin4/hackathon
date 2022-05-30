@@ -30,16 +30,13 @@ import {
 export class ProductListComponent {
   product$: Observable<ProductDTO[]> = this._getsAllProductDto.getAll();
 
-
   constructor(
     @Inject(GETS_ALL_PRODUCT_DTO)
-
     private _getsAllProductDto: GetsAllProductDtoPort,
     @Inject(ADDS_CART_DTO)
     private _addsCartDto: AddsCartDtoPort,
     @Inject(CONTEXT_DTO_STORAGE)
     private _contextDtoStorage: ContextDtoStoragePort
-
   ) {}
 
   onItemClicked(item: ProductDTO): void {

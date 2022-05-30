@@ -10,16 +10,45 @@
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div>
-  <div class="modal-body">{{ product | json }}</div>
+  <div class="modal-body">
+    <div class="container">
+      <div class="row">
+        <div class="card-group">
+          <div class="card">
+            <img
+              [src]="[product.product?.imageUrl]"
+              style="height: 484px"
+              class="card-img-top"
+              alt="..."
+            />
+            <p class="text-center" style="font-weight: bold">
+              {{ product.product?.name }}
+            </p>
+            <p class="text-center" style="color: blue">
+              $ {{ product.product?.price }}
+            </p>
+            <!-- <button (click)="onItemClicked(item)">Add to cart</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-secondary"
-      data-bs-dismiss="modal"
-      (click)="modalRef?.hide()"
-    >
-      Cancel
-    </button>
-    <button type="button" class="btn btn-primary">Delete task</button>
+    <form [formGroup]="editProduct" (ngSubmit)="onButtonSubmited(editProduct)">
+      <input type="text" formControlName="name" placeholder="Name" />
+      <input type="text" formControlName="price" placeholder="Price" />
+      <input type="text" formControlName="desc" placeholder="Desc" />
+      <input type="text" formControlName="imageUrl" placeholder="Image Url" />
+
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+        (click)="modalRef?.hide()"
+      >
+        Cancel
+      </button>
+      <input type="submit" class="btn btn-primary" value="Edit Product" />
+    </form>
   </div>
 </div>
