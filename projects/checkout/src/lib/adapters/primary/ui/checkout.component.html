@@ -1,8 +1,6 @@
 <div class="mb-3 ps-2">
   <a href="/home" class="text-reset text-decoration-none fw-light">HOME</a> /
-  <a href="/checkout-summary" class="text-reset text-decoration-none fw-light"
-    >Checkout</a
-  >
+  <a href="/checkout-summary" class="text-reset text-decoration-none fw-light">Checkout</a>
 </div>
 <br />
 <div class="container">
@@ -11,82 +9,44 @@
     <form [formGroup]="addCheckout" class="pt-4">
       <div class="mb-3 pb-2">
         <p>Full Name <span style="color: red">*</span></p>
-        <input
-          type="text"
-          formControlName="fullName"
-          placeholder=""
-          class="pb-2"
-          style="width: 50%; height: 40px"
-          required
-        />
+        <input type="text" formControlName="fullName" placeholder="Name" class="pb-2" style="width: 50%; height: 40px"
+          required />
       </div>
       <div class="mb-3 pb-2">
         <p>Street adress <span style="color: red">*</span></p>
-        <input
-          type="text"
-          formControlName="address"
-          placeholder="House number and street name"
-          class="pb-2"
-          style="width: 50%; height: 40px"
-          required
-        />
+        <input type="text" formControlName="address" placeholder="House number and street name" class="pb-2"
+          style="width: 50%; height: 40px" required />
       </div>
       <div class="mb-3 pb-2">
         <p>Town/City<span style="color: red">*</span></p>
-        <input
-          type="text"
-          formControlName="town"
-          placeholder=""
-          style="width: 50%; height: 40px"
-          required
-        />
+        <input type="text" formControlName="town" placeholder="Town/City" style="width: 50%; height: 40px" required />
       </div>
       <div class="mb-3 pb-2">
         <p>Phone<span style="color: red">*</span></p>
-        <input
-          type="text"
-          formControlName="phone"
-          placeholder=""
-          style="width: 50%; height: 40px"
-          required
-        />
+        <input type="number" formControlName="phone" placeholder="+48 222 222 222" style="width: 50%; height: 40px"
+          required />
       </div>
       <div class="mb-3 pb-2">
         <p>Email adress <span style="color: red">*</span></p>
-        <input
-          type="email"
-          formControlName="email"
-          placeholder=""
-          style="width: 50%; height: 40px"
-          required="@"
-          email
-        />
+        <input type="email" formControlName="email" placeholder="example@example.com" style="width: 50%; height: 40px"
+          required="@" email />
       </div>
-        <br><br>
-        <h3>Your Order</h3>
-        <br><br>
-<!-- to create the order place -->
+      <br><br>
+      <h3>Your Order</h3>
+      <br><br>
+      <!-- to create the order place -->
 
       <div class="mb-3 pb-2">
-        <button
-          class="btn btn-danger"
-          (click)="onProductsClicked(addCheckout); showAlert()"
-          type="submit"
-          value="Submit"
-          [disabled]="!addCheckout.valid"
-        >
+        <button class="btn btn-danger" (click)="onProductsClicked(addCheckout); showAlert()" type="submit"
+          value="Submit" [disabled]="!addCheckout.valid">
           PLACE ORDER
         </button>
       </div>
     </form>
   </div>
 </div>
-<div
-  *ngIf="placeOrder"
-  class="alert alert-dismissible mt-5 text-center"
-  style="width: 200px; position: absolute; top: 15px; right: 10px; background-color: greenyellow;"
-  role="alert"
->
+<div *ngIf="placeOrder" class="alert alert-dismissible mt-5 text-center"
+  style="width: 200px; position: absolute; top: 15px; right: 10px; background-color: greenyellow;" role="alert">
   Place ordered succesfully!
-<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
