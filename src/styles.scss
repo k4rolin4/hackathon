@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+// // /* Importing Bootstrap SCSS file. */
+// @import "~bootstrap/scss/bootstrap";
+
+// /* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
 .break-line {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -17,12 +23,9 @@
     color: white;
 }
 
+
+
 // .input-quantity {
 //     border: 1px solid #c0b8b8;
 //     width: 30px;
 // }
-/* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
-
-/* Importing Datepicker SCSS file. */
-@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
