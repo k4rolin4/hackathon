@@ -21,22 +21,24 @@
         </ul>
         <hr class="border border-2 rounded break-line">
     </div>
-    <div *ngFor="let item of cartList$ | async" class=" ">
+    <div *ngFor="let product of cartList$ | async" class=" ">
         <ul class="d-flex row justify-content-md-center align-items-center">
-            <li class="list-group-item col-sm-2">{{ item.name }}</li>
-            <li class="list-group-item col-sm-2">{{ item.price }} $</li>
+            <li class="list-group-item col-sm-2">{{ product.name }}</li>
+            <li class="list-group-item col-sm-2">{{ product.price }} $</li>
             <li class="list-group-item col-sm-2">
                 <form [formGroup]="editAmount" class=" d-flex align-items-center">
-                    <button type="submit" value="Submit" (click)="onEditAmountPlus()"
+                    <button type="submit" value="Submit" (click)="onEditAmountMinus(product)"
                         class="btn btn-light btn-plus-minus">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-dash" viewBox="0 0 16 16">
                             <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                     </button>
-                    <input type="text" formControlName="number" placeholder="1" style="width: 30px;">
-                    <button type="submit" value="Submit" (click)="onEditAmountMinus()"
-                        class="btn btn-light btn-plus-minus">
+                    <span>
+                        {{product.quantity}}
+                    </span>
+                    <button type="submit" value="Submit" class="btn btn-light btn-plus-minus"
+                        (click)="onEditAmountPlus(product)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-plus" viewBox="0 0 16 16">
                             <path
@@ -45,8 +47,8 @@
                     </button>
                 </form>
             </li>
-            <li class="list-group-item col-2">{{ item.price }} $</li>
-            <button (click)="clickConfirm(item.id)" class="col-2 btn-close"> </button>
+            <li class="list-group-item col-2">{{ product.price * product.quantity }} $</li>
+            <button (click)="clickConfirm(product.id)" class="col-2 btn-close"> </button>
         </ul>
     </div>
 
@@ -57,7 +59,7 @@
                 <div>
                     <h6 class="card-subtitle text-muted align-middle">Subtotal</h6>
                 </div>
-                <div>cena $</div>
+                <div> $</div>
                 <!-- cena na wąsy -->
             </div>
             <hr class="border border-2 rounded break-line">
@@ -74,9 +76,9 @@
             </div>
             <!-- <hr class="border border-2 rounded break-line"> -->
             <a href="/checkout-summary" style="text-decoration: none; color:black;">
-                 <button class="mt-4 btn btn-click ">
-                PROCEED TO CHECKOUT
-            </button>
+                <button class="mt-4 btn btn-click ">
+                    PROCEED TO CHECKOUT
+                </button>
             </a>
         </div>
     </div>

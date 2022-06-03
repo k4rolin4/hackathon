@@ -33,12 +33,17 @@ export class CartListComponent {
       return;
     }
   }
-  onEditAmountPlus() {
-
+  onEditAmountPlus(product: { quantity: number; }) {
+    console.log(product)
+    product.quantity = product.quantity += 1;
   }
 
-  onEditAmountMinus() {
-
+  onEditAmountMinus(product: { quantity: number; }) {
+    console.log(product)
+    if (product.quantity != 1) {
+      product.quantity = product.quantity -= 1;
+    }
   }
+
 
 }
