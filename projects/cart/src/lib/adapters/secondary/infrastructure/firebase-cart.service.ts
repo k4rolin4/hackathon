@@ -15,7 +15,9 @@ export class FirebaseCartService implements GetsAllCartDtoPort, AddsCartDtoPort,
 
   getAll(criterion: Partial<CartDTO>): Observable<CartDTO[]> {
 
-    return this._client.collection<CartDTO>('carts').valueChanges(({idField: 'id'})).pipe(map((data: CartDTO[]) => filterByCriterion(data, criterion)));
+    return this._client.collection<CartDTO>('carts')
+      .valueChanges(({ idField: 'id' }))
+      .pipe(map((data: CartDTO[]) => filterByCriterion(data, criterion)));
   }
   add(cart: Partial<CartDTO>): void {
     console.log(cart)
@@ -23,6 +25,6 @@ export class FirebaseCartService implements GetsAllCartDtoPort, AddsCartDtoPort,
   }
 
   remove(id: string): void {
-    this._client.doc('carts/'+id).delete();
+    this._client.doc('carts/' + id).delete();
   }
 }

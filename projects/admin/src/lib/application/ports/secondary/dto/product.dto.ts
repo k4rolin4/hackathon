@@ -4,4 +4,5 @@ export interface ProductDTO {
   readonly imageUrl: string;
   readonly desc: string;
   readonly price: number;
+  readonly quantity: number;
 }

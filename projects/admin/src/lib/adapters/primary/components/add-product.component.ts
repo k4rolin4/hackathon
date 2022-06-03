@@ -22,11 +22,12 @@ export class AddProductComponent {
     imageUrl: new FormControl(),
     desc: new FormControl(),
     price: new FormControl(),
+    quantity: new FormControl(),
   });
 
   constructor(
     @Inject(ADDS_PRODUCT_DTO) private _addsProductDto: AddsProductDtoPort
-  ) {}
+  ) { }
 
   onCreateProductSubmited(createProduct: FormGroup): void {
     this._addsProductDto.add({
@@ -34,6 +35,7 @@ export class AddProductComponent {
       imageUrl: createProduct.get('imageUrl')?.value,
       desc: createProduct.get('desc')?.value,
       price: createProduct.get('price')?.value,
+      quantity: createProduct.get('quantity')?.value,
     });
     this.createProduct.reset();
   }
