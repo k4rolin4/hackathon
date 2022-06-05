@@ -39,6 +39,8 @@ export class ProductListComponent {
     private _contextDtoStorage: ContextDtoStoragePort
   ) {}
 
+  placeOrder: boolean = false;
+
   onItemClicked(item: ProductDTO): void {
     console.log(item);
     this._addsCartDto.add({
@@ -51,5 +53,9 @@ export class ProductListComponent {
 
   onItemOnpictureclickeded(product: ProductDTO): void {
     this._contextDtoStorage.next({ productId: product.id });
+  }
+
+  async showAlert(): Promise<void> {
+    this.placeOrder = true;
   }
 }

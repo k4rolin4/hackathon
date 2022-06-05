@@ -4,12 +4,27 @@
   <div class="row">
     <div class="card-group">
       <div class="card ms-5" *ngFor="let item of product$ | async">
-        <img [routerLink]="'/product-detail/' + item.id" [src]="[item.imageUrl]"
-          (click)="onItemOnpictureclickeded(item)" style="height: 484px" class="card-img-top" alt="..." />
+        <img
+          [routerLink]="'/product-detail/' + item.id"
+          [src]="[item.imageUrl]"
+          (click)="onItemOnpictureclickeded(item)"
+          style="height: 484px"
+          class="card-img-top"
+          alt="..."
+        />
         <p class="text-center" style="font-weight: bold">{{ item.name }}</p>
-        <p class="text-center" style="color: blue;">$ {{ item.price }}</p>
-        <button (click)="onItemClicked(item)">Add to cart</button>
+        <p class="text-center" style="color: blue">$ {{ item.price }}</p>
+        <button (click)="onItemClicked(item); showAlert()">Add to cart</button>
       </div>
     </div>
   </div>
 </div>
+<alert
+  *ngIf="placeOrder"
+  class="alert alert-dismissible mt-5 text-center"
+  dismissOnTimeout="2000"
+  style="position: fixed; top: 15px; right: 10px"
+  role="alert"
+>
+  Product added to cart!
+</alert>
