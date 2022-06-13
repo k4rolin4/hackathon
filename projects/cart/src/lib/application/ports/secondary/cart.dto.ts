@@ -4,4 +4,5 @@ export interface CartDTO {
   readonly imageUrl: string;
   readonly desc: string;
   readonly price: number;
+  readonly quantity: number;
 }

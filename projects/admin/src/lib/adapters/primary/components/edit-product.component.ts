@@ -5,7 +5,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { ProductContext } from '../../../application/ports/secondary/context/product.context';
 import {
   SELECTS_PRODUCT_CONTEXT,
@@ -24,8 +24,12 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditProductComponent {
-  product$: Observable<Partial<ProductContext>> =
-    this._selectsProductContext.select();
+  product$: Observable<Partial<ProductContext>> = this._selectsProductContext
+    .select()
+    .pipe(
+      tap((product) => this.editProduct.patchValue(product.product || {})),
+      tap(console.log)
+    );
 
   readonly editProduct: FormGroup = new FormGroup({
     name: new FormControl(),

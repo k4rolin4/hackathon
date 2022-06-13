@@ -37,7 +37,9 @@ export class ProductListComponent {
     private _addsCartDto: AddsCartDtoPort,
     @Inject(CONTEXT_DTO_STORAGE)
     private _contextDtoStorage: ContextDtoStoragePort
-  ) {}
+  ) { }
+
+  placeOrder: boolean = false;
 
   onItemClicked(item: ProductDTO): void {
     console.log(item);
@@ -46,10 +48,15 @@ export class ProductListComponent {
       imageUrl: item.imageUrl,
       desc: item.desc || '',
       price: item.price,
+      quantity: item.quantity,
     });
   }
 
   onItemOnpictureclickeded(product: ProductDTO): void {
     this._contextDtoStorage.next({ productId: product.id });
+  }
+
+  async showAlert(): Promise<void> {
+    this.placeOrder = true;
   }
 }
