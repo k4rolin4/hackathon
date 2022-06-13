@@ -175,6 +175,22 @@
           }
         }
       }
+    },
+    "about-us": {
+      "projectType": "library",
+      "root": "projects/aboutUs",
+      "sourceRoot": "projects/aboutUs/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/aboutUs"],
+          "options": {
+            "jestConfig": "projects/aboutUs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "defaultProject": "hackathon"

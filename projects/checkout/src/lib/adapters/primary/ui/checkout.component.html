@@ -44,7 +44,7 @@
       <div class="mb-3 pb-2">
         <p>Phone<span style="color: red">*</span></p>
         <input
-          type="text"
+          type="number"
           formControlName="phone"
           placeholder=""
           style="width: 50%; height: 40px"
@@ -58,15 +58,19 @@
           formControlName="email"
           placeholder=""
           style="width: 50%; height: 40px"
-          required="@"
+          required="@xxx.com"
           email
         />
       </div>
         <br><br>
         <h3>Your Order</h3>
         <br><br>
-<!-- to create the order place -->
-
+        <ul>
+        <li *ngFor="let item of order$ | async">{{ item.name }}</li>
+        <li *ngFor="let item of order$ | async">{{ item.price }}</li>
+        <li *ngFor="let item of order$ | async">{{ item.quantity }}</li>
+        </ul>
+        
       <div class="mb-3 pb-2">
         <button
           class="btn btn-danger"
