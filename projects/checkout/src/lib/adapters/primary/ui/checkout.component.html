@@ -2,7 +2,8 @@
   <a href="/home" class="text-reset text-decoration-none fw-light">HOME</a> /
   <a href="/checkout-summary" class="text-reset text-decoration-none fw-light">Checkout</a>
 </div>
-<br />
+
+<br>
 <div class="container">
   <div class="col-xs-4">
     <h3 class="text-uppercase">Billing details</h3>
@@ -23,14 +24,42 @@
       </div>
       <div class="mb-3 pb-2">
         <p>Phone<span style="color: red">*</span></p>
+        <input
+          type="number"
+          formControlName="phone"
+          placeholder="+48 222 222 222"
+          style="width: 50%; height: 40px"
+          required
+        />
+      </div>
+      <div class="mb-3 pb-2">
+        <p>Email adress <span style="color: red">*</span></p>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="example@example.com"
+          style="width: 50%; height: 40px"
+          required="example@example.com"
+          email
+        />
+      </div>
+        <br><br>
+        <h3>Your Order</h3>
+        <br><br>
+        <ul>
+        <li *ngFor="let item of order$ | async">{{ item.name }}</li>
+        <li *ngFor="let item of order$ | async">{{ item.price }}</li>
+        <li *ngFor="let item of order$ | async">{{ item.quantity }}</li>
+        </ul>
         <input type="number" formControlName="phone" placeholder="+48 222 222 222" style="width: 50%; height: 40px"
           required />
-      </div>
+    
       <div class="mb-3 pb-2">
         <p>Email adress <span style="color: red">*</span></p>
         <input type="email" formControlName="email" placeholder="example@example.com" style="width: 50%; height: 40px"
           required="@" email />
       </div>
+
       <br><br>
       <h3>Your Order</h3>
       <br><br>
@@ -42,9 +71,10 @@
           PLACE ORDER
         </button>
       </div>
-    </form>
+      </form>
+      </div>
   </div>
-</div>
+
 <div *ngIf="placeOrder" class="alert alert-dismissible mt-5 text-center"
   style="width: 200px; position: absolute; top: 15px; right: 10px; background-color: greenyellow;" role="alert">
   Place ordered succesfully!
