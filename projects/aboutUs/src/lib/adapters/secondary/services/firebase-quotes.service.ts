@@ -10,6 +10,6 @@ export class FirebaseQuotesService implements GetsAllQuotesDtoPort {
   }
 
   getAll(): Observable<QuotesDTO[]> {
-    return this._client.collection<QuotesDTO>('quotes').valueChanges(({idField: 'id'}));
+    return this._client.collection<QuotesDTO>('testimonials').valueChanges(({idField: 'id'}));
   }
 }

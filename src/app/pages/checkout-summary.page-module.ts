@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 import { CheckoutSummaryPage } from './checkout-summary.page';
 import { 
   CheckoutComponentModule, 
-  FirebaseCheckoutServiceModule } 
+  FirebaseCheckoutServiceModule, 
+  FirebaseOrderServiceModule} 
 from '@checkout';
 
 
@@ -17,7 +18,8 @@ from '@checkout';
         }
       ]),
       FirebaseCheckoutServiceModule,
-      CheckoutComponentModule
+      CheckoutComponentModule,
+      FirebaseOrderServiceModule
     ],
   	declarations: [CheckoutSummaryPage],
   	providers: [],

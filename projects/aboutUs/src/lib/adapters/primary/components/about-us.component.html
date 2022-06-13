@@ -34,11 +34,17 @@
     </div>
   </div>
 </div>
-<ul>
-  <li *ngFor="let item of quotes$ | async">
-    {{ item.name }}
-    {{ item.desc }}
-    {{ item.imageUrl }}
-  </li>
-  
-</ul>
+<div class="container py-5">
+  <div class="row no-gutters">
+    <div class="card-group">
+      <div class="card ms-5" *ngFor="let quote of quotes$ | async">
+        <img [src]="[quote.imageUrl]" class="card-img-top" alt="..." />
+        <p class="text-center" style="font-weight: bold">
+          {{ quote.name }}
+        </p>
+        <p class="text-center">{{ quote.desc }}</p>
+        <!-- <button (click)="onButtonClicked(product)">Add to top sellers</button> -->
+      </div>
+    </div>
+  </div>
+</div>
