@@ -7,3 +7,4 @@ export * from './lib/adapters/secondary/infrastructure/in-memory-context.storage
 export * from './lib/adapters/primary/ui/product-detail.resolver-module';
 export * from './lib/adapters/primary/components/top-sellers.component-module';
 export * from './lib/adapters/secondary/services/firebase-top-seller.service-module';
+export * from './lib/adapters/primary/ui/benefits.component-module';

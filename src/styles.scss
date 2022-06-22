@@ -6,6 +6,16 @@
 // /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
+// html {
+//     scroll-behavior: smooth;
+// }
+
+
+// #product {
+//     margin-top: 100%;
+//     padding-bottom: 25%;
+// }
+
 .break-line {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -23,10 +33,87 @@
     color: white;
 }
 
+.img-homepage {
+    height: 342px
+}
+
+.font-lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.font-arimo {
+    font-family: 'Arimo', sans-serif;
+}
+
+.price,
+.benefits-icon {
+    color: #024E82;
+}
+
+.benefits-icon {
+    width: 50px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.benefits-title {
+    color: #1D1D1D;
+}
+
+.benefits-desc {
+    color: #555555;
+}
+
+.btn-add-cart {
+    background-color: #024E82;
+}
+
+.text-white {
+    color: #FFFFFF;
+}
+
+.alert-added {
+    position: fixed;
+    top: 15px;
+    right: 10px
+}
+
+.baner {
+    top: 160px;
+    right: 45px;
+}
+
+.text-baner {
+    width: 492.42px;
+    height: 104px;
+    left: 770.03px;
+    top: 296px;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 48px;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.btn-baner {
+    box-sizing: border-box;
+    border: 5px solid #FFFFFF;
+    // display: flex;
+    align-items: center;
+    padding: 18px 36px;
+    // position: absolute;
+    width: 175.16px;
+    height: 60px;
+    right: 154px;
+    top: 130px;
+    background: transparent;
+}
+
+
 .hand {
     width: 1920px;
     height: 488px;
 }
+
 
 // .input-quantity {
 //     border: 1px solid #c0b8b8;

@@ -16,6 +16,8 @@ export class CartListComponent {
   cartList$: Observable<CartDTO[]> = this._getsAllCartDto.getAll();
   readonly editAmount: FormGroup = new FormGroup({ number: new FormControl() });
 
+
+
   constructor(
     @Inject(GETS_ALL_CART_DTO) private _getsAllCartDto: GetsAllCartDtoPort,
     @Inject(REMOVES_CART_DTO) private _removesCartDto: RemovesCartDtoPort,
@@ -33,17 +35,49 @@ export class CartListComponent {
       return;
     }
   }
-  onEditAmountPlus(product: { quantity: number; }) {
+  onEditAmountPlus(product: { quantity: number; id: string }) {
     console.log(product)
     product.quantity = product.quantity += 1;
   }
 
-  onEditAmountMinus(product: { quantity: number; }) {
+  onEditAmountMinus(product: { quantity: number; id: string }) {
     console.log(product)
     if (product.quantity != 1) {
       product.quantity = product.quantity -= 1;
     }
   }
 
+
+  // totalPriceOneProduct(total: number, product: { price: number; quantity: number; }) {
+  //   total = product.price * product.quantity
+  // }
+
+
+  // cartDetails() {
+  //   if(localStorage.getItem('localCart')) {
+  //     this.getCartDetails = JSON.parse(localStorage.getItem('localCart'));
+  //     console.log(this.cartDetails)
+  //   }
+  // }
+
+  // ngOnInit(): void {
+  //   this.cartTotals();
+  // }
+
+  // acc: any;
+  // val: any;
+  total: number = 0;
+  // cartSubtotal(acc: number, val: { price: number; quantity: number; }) {
+  // localStorage.setItem('localCart', JSON.stringify(sth))
+  // console.log(sth)
+
+  // localStorage.getItem('localCart')
+  // console.log(this.total)
+
+  // this.total = acc + (val.price * val.quantity)
+  // this.total.reduce(function (acc: number, val: { price: number; quantity: number; }) {
+  //   return 
+  // }, 0)
+  // }
 
 }
