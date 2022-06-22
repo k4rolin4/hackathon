@@ -23,7 +23,8 @@
       "@checkout": ["projects/checkout/src/index.ts"],
       "@cart": ["projects/cart/src/index.ts"],
       "@admin": ["projects/admin/src/index.ts"],
-      "@navigation": ["projects/navigation/src/index.ts"]
+      "@navigation": ["projects/navigation/src/index.ts"],
+      "@aboutUs": ["projects/aboutUs/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
