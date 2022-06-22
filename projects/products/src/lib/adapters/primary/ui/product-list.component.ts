@@ -52,7 +52,7 @@ export class ProductListComponent {
     });
   }
 
-  onItemOnpictureclickeded(product: ProductDTO): void {
+  onItemOnPictureClicked(product: ProductDTO): void {
     this._contextDtoStorage.next({ productId: product.id });
   }
 

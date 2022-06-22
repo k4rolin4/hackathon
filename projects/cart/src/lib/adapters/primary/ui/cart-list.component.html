@@ -47,7 +47,8 @@
                     </button>
                 </form>
             </li>
-            <li class="list-group-item col-2">{{ product.price * product.quantity }} $</li>
+            <li class="list-group-item col-2">{{ product.price * product.quantity | currency}}
+            </li>
             <button (click)="clickConfirm(product.id)" class="col-2 btn-close"> </button>
         </ul>
     </div>
@@ -59,7 +60,10 @@
                 <div>
                     <h6 class="card-subtitle text-muted align-middle">Subtotal</h6>
                 </div>
-                <div> $</div>
+                <div>
+                    {{total | currency}}
+                </div>
+                <!-- <div (show)="cartSubtotal(acc, val)"> $ {{total | number}} </div> -->
                 <!-- cena na wąsy -->
             </div>
             <hr class="border border-2 rounded break-line">

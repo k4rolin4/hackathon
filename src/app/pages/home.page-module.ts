@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
+  BenefitsComponentModule,
   FirebaseProductsServiceModule,
   ProductListComponentModule,
   FirebaseTopSellerServiceModule,
-  TopSellersComponentModule,
-} from '@products';
+  TopSellersComponentModule
+}
+  from '@products';
 import { FirebaseCartServiceModule } from '@cart';
 import { NavbarComponentModule } from '@navigation';
 import { HomePage } from './home.page';
@@ -26,9 +28,10 @@ import { HomePage } from './home.page';
     TopSellersComponentModule,
     FirebaseTopSellerServiceModule,
     NavbarComponentModule,
+    BenefitsComponentModule
   ],
   declarations: [HomePage],
   providers: [],
   exports: [],
 })
-export class HomePageModule {}
+export class HomePageModule { }
